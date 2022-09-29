@@ -1,0 +1,5 @@
+# The GCP project identifier to use for project-scoped tests
+project_id  = "my-gcp-project"
+
+# The GCP organization identifier to use for org-scoped tests
+org_id  = "123456"

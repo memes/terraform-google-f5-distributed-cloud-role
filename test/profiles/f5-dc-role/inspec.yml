@@ -1,0 +1,16 @@
+---
+name: f5-dc-role
+title: F5 Distributed Cloud custom role verification
+maintainer: Matthew Emes <memes@matthewemes.com>
+license: Apache-2.0
+version: 1.0.0
+supports:
+  - platform: gcp
+depends:
+  - name: inspec-gcp
+    git: https://github.com/inspec/inspec-gcp.git
+    tag: v1.10.37
+inputs:
+  - name: output_role_id
+    type: string
+    required: true

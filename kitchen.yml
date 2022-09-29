@@ -1,0 +1,198 @@
+# NOTE: This test-kitchen file contains ERB code to cut-down on boilerplate; YAML
+# linters will complain!
+# yamllint disable
+<%
+require 'open3'
+require 'json'
+
+report_dir = ENV['REPORT_DIR'] || 'test/reports'
+report_ts = ENV['REPORT_TS'] || Time.now.strftime('%Y-%m-%d-%H-%M-%S')
+
+tf_output, rc = Open3.capture2('terraform -chdir=test/setup output -json')
+if rc != 0
+  abort 'Failed to capture Terraform output from test/setup'
+end
+harness_outputs = JSON.parse(tf_output).map { |k,v| [k, v['value']] }.to_h
+%>
+---
+driver:
+  name: terraform
+  command_timeout: 600
+  verify_version: true
+
+provisioner:
+  name: terraform
+
+verifier:
+  name: terraform
+  color: true
+
+platforms:
+  - name: local
+
+suites:
+  - name: minimal-project-role
+    driver:
+      root_module_directory: test/fixtures/root
+      variables:
+        target_id: '<%= harness_outputs['project_id'] %>'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - project_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/minimal-project-role.txt
+  - name: random-id-project-role
+    driver:
+      root_module_directory: test/fixtures/root
+      variables:
+        target_type: project
+        target_id: '<%= harness_outputs['project_id'] %>'
+        random_id_prefix: '<%= harness_outputs['prefix'].gsub(/[^a-z0-9_.]/, '_') %>'
+        title: Full random id project role
+        members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - project_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/random-id-project-role.txt
+  - name: fixed-id-project-role
+    driver:
+      root_module_directory: test/fixtures/root
+      variables:
+        target_type: project
+        target_id: '<%= harness_outputs['project_id'] %>'
+        id: '<%= harness_outputs['prefix'].gsub(/[^a-z0-9_.]/, '_') + '_full_fixed_id' %>'
+        title: Full fixed id project role
+        members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - project_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/fixed-id-project-role.txt
+  - name: minimal-org-role
+    driver:
+      root_module_directory: test/fixtures/root
+      variables:
+        target_type: org
+        target_id: '<%= harness_outputs['org_id'] %>'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - org_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/minimal-org-role.txt
+  - name: random-id-org-role
+    driver:
+      root_module_directory: test/fixtures/root
+      variables:
+        target_type: org
+        target_id: '<%= harness_outputs['org_id'] %>'
+        random_id_prefix: '<%= harness_outputs['prefix'].gsub(/[^a-z0-9_.]/, '_') %>'
+        title: Full random id org role
+        members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - org_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/random-id-org-role.txt
+  - name: fixed-id-org-role
+    driver:
+      root_module_directory: test/fixtures/root
+      variables:
+        target_type: org
+        target_id: '<%= harness_outputs['org_id'] %>'
+        id: '<%= harness_outputs['prefix'].gsub(/[^a-z0-9_.]/, '_') + '_full_fixed_id' %>'
+        title: Full fixed id org role
+        members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - org_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/fixed-id-org-role.txt
+  - name: example-simple-project-role
+    driver:
+      root_module_directory: test/fixtures/examples/simple_project_role
+      variables:
+        project_id: '<%= harness_outputs['project_id'] %>'
+        members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - project_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/example-simple-project-role.txt
+  - name: example-simple-org-role
+    driver:
+      root_module_directory: test/fixtures/examples/simple_org_role
+      variables:
+        org_id: '<%= harness_outputs['org_id'] %>'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - org_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/example-simple-org-role.txt
+  - name: example-fixed-id
+    driver:
+      root_module_directory: test/fixtures/examples/fixed_id
+      variables:
+        project_id: '<%= harness_outputs['project_id'] %>'
+        id: '<%= harness_outputs['prefix'].gsub(/[^a-z0-9_.]/, '_') + '_example_id' %>'
+        title: Example with fixed id
+        members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
+    verifier:
+      systems:
+        - name: f5-dc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-dc-role
+          controls:
+            - project_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/example-fixed-id.txt

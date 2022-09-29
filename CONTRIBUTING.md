@@ -14,36 +14,47 @@ applied.
 [pre-commit] is used to ensure that all files have consistent formatting and to
 avoid committing secrets.
 
-[golangci-lint] is used to enforce Go code passes
-linting and formatting rules ([gofumpt] is the expected Go code formatter). Rules
-are defined in [.golangci.yml](.golangci.yml).
-
 1. Install [pre-commit] in a virtual python environment or globally: see [instructions](https://pre-commit.com/#installation)
-2. Install [golangci-lint] from a binary or from source: see [instructions](https://golangci-lint.run/usage/install/#local-installation)
-3. Fork and clone this repo
-4. Install pre-commit hook to git
+2. Fork and clone this repo
+3. Install pre-commit hook to git
 
    E.g.
 
    ```shell
-   pip install pre-commit
+   pip install --upgrade pip pre-commit
    pre-commit install
    ```
 
-5. Create a new branch for changes
-6. Execute tests and `golangci-lint` to validate changes. Please address any
-   issues raised.
+4. Create a new branch for changes
+5. Execute tests using Makefile
+
+   E.g.
 
    ```shell
-   go test -v ./...
-   golangci-lint run
+   gmake verify
+   kitchen list
    ```
 
-7. Commit and push changes for PR
+   ```text
+   Instance                           Driver     Provisioner  Verifier   Transport  Last Action  Last Error
+   minimal-project-role-local         Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   random-id-project-role-local       Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   fixed-id-project-role-local        Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   minimal-org-role-local             Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   random-id-org-role-local           Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   fixed-id-org-role-local            Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   example-simple-project-role-local  Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   example-simple-org-role-local      Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   example-fixed-id-local             Terraform  Terraform    Terraform  Ssh        Verified     <None>
+   ```
+
+   ```shell
+   gmake clean
+   ```
+
+6. Commit and push changes for PR
 
    The hook will ensure that `pre-commit` will be run against all staged changes
    during `git commit`.
 
 [pre-commit]: https://pre-commit.com/
-[gofumpt]: https://github.com/mvdan/gofumpt
-[golangci-lint]: https://golangci-lint.run/

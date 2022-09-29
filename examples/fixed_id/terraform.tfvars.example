@@ -1,0 +1,6 @@
+project_id = "my-project-id"
+id         = "my-f5-dc-role"
+title      = "My example custom F5 Distributed Cloud role"
+members    = [
+  "serviceAccount:f5-dc@my-project-id.iam.gserviceaccount.com",
+]

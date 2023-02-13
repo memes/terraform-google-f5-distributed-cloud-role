@@ -78,7 +78,7 @@ module "role" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_role"></a> [role](#module\_role) | terraform-google-modules/iam/google//modules/custom_role_iam | 7.4.1 |
+| <a name="module_role"></a> [role](#module\_role) | terraform-google-modules/iam/google//modules/custom_role_iam | 7.5.0 |
 
 ## Resources
 

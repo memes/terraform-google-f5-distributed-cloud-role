@@ -5,10 +5,10 @@ terraform {
   required_version = ">= 1.0"
 }
 
-# Create a custom F5 BIG-IP CFE role for an organization
+# Create a custom F5 Distributed Cloud role for an organization
 module "role" {
   source      = "memes/f5-distributed-cloud-role/google"
-  version     = "1.0.0"
+  version     = "1.0.1"
   target_type = "org"
   target_id   = var.org_id
 }

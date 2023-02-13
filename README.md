@@ -1,5 +1,9 @@
 # F5 Distributed Cloud Role Terraform module
 
+![GitHub release](https://img.shields.io/github/v/release/memes/terraform-google-f5-distributed-cloud-role?sort=semver)
+![Maintenance](https://img.shields.io/maintenance/yes/2023)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+
 This Terraform module is a helper to create a custom IAM role that has the
 permissions required for F5 Distributed Cloud to manage a Google Cloud environment.
 The role will be created in the specified project by default, but can be created
@@ -18,13 +22,13 @@ it is purged from the project or organization.
 
 ### Create the custom role at the project, and assign to an existing service account
 
-See [Simple project role](examples/simple_project_role/) example for more details.
+See [Simple project role](examples/simple_project_role) example for more details.
 
 <!-- spell-checker: disable -->
 ```hcl
 module "role" {
   source    = "memes/f5-distributed-cloud-role/google"
-  version   = "1.0.0"
+  version   = "1.0.1"
   target_id = "my-project-id"
   members   = ["serviceAccount:bigip@my-project-id.iam.gserviceaccount.com"]
 }
@@ -33,13 +37,13 @@ module "role" {
 
 ### Create the custom role for entire org, but do not explicitly assign membership
 
-See [Simple org role](examples/simple_org_role/) example for more details.
+See [Simple org role](examples/simple_org_role) example for more details.
 
 <!-- spell-checker: disable -->
 ```hcl
 module "org_role" {
   source      = "memes/f5-distributed-cloud-role/google"
-  version     = "1.0.0"
+  version     = "1.0.1"
   target_type = "org"
   target_id   = "my-org-id"
 }
@@ -48,13 +52,13 @@ module "org_role" {
 
 ### Create the custom role in the project with a fixed id, and assign to a BIG-IP service account
 
-See [Fixed id](examples/fixed_id/) example for more details.
+See [Fixed id](examples/fixed_id) example for more details.
 
 <!-- spell-checker: disable -->
 ```hcl
 module "role" {
   source    = "memes/f5-distributed-cloud-role/google"
-  version   = "1.0.0"
+  version   = "1.0.1"
   id        = "my_custom_role"
   target_id = "my-project-id"
   title     = "An example F5 Distributed Cloud custom role"

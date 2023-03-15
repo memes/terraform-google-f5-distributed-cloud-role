@@ -30,7 +30,7 @@ module "role" {
   source    = "memes/f5-distributed-cloud-role/google"
   version   = "1.0.1"
   target_id = "my-project-id"
-  members   = ["serviceAccount:bigip@my-project-id.iam.gserviceaccount.com"]
+  members   = ["serviceAccount:f5-dc@my-project-id.iam.gserviceaccount.com"]
 }
 ```
 <!-- spell-checker: enable -->
@@ -62,7 +62,7 @@ module "role" {
   id        = "my_custom_role"
   target_id = "my-project-id"
   title     = "An example F5 Distributed Cloud custom role"
-  members   = ["serviceAccount:bigip@my-project-id.iam.gserviceaccount.com"]
+  members   = ["serviceAccount:f5-dc@my-project-id.iam.gserviceaccount.com"]
 }
 ```
 <!-- spell-checker: enable -->

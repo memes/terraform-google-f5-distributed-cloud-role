@@ -7,13 +7,13 @@ IAM accounts provided.
 ## Example tfvars file
 
 * Deploy to project: `my-project-id`
-* Add the role to the existing service account: 'f5-dc@my-project-id.iam.gserviceaccount.com'
+* Add the role to the existing service account: 'f5-xc@my-project-id.iam.gserviceaccount.com'
 
 <!-- spell-checker: disable -->
 ```hcl
 project_id = "my-project-id"
 members    = [
-  "serviceAccount:f5-dc@my-project-id.iam.gserviceaccount.com",
+  "serviceAccount:f5-xc@my-project-id.iam.gserviceaccount.com",
 ]
 ```
 <!-- spell-checker: enable -->

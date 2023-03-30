@@ -29,5 +29,5 @@ variable "members" {
 
 variable "random_id_prefix" {
   type    = string
-  default = "f5_dc"
+  default = "f5_xc"
 }

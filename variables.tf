@@ -34,7 +34,7 @@ variable "id" {
   An identifier to use for the new role; default is an empty string which will
   generate a unique identifier. If a value is provided, it must be unique at the
   organization or project level depending on value of target_type respectively.
-  E.g. multiple projects can all have a 'f5_dc' role defined, but an organization
+  E.g. multiple projects can all have a 'f5_xc' role defined, but an organization
   level role must be uniquely named.
   EOD
 }
@@ -76,14 +76,14 @@ variable "members" {
 
 variable "random_id_prefix" {
   type    = string
-  default = "f5_dc"
+  default = "f5_xc"
   validation {
     condition     = can(regex("^[a-z0-9_.]{3,59}$", var.random_id_prefix))
     error_message = "The random_id_prefix variable must be between 3 and 59 characters in length and only contain alphanumeric, underscore and periods."
   }
   description = <<-EOD
   The prefix to use when generating random role identifier for the new role if
-  `id` field is blank. The default is 'f5_dc' which will generate a unique role
-  identifier of the form 'f5_dc_XXXX', where XXXX is a random hex string.
+  `id` field is blank. The default is 'f5_xc' which will generate a unique role
+  identifier of the form 'f5_xc_XXXX', where XXXX is a random hex string.
   EOD
 }

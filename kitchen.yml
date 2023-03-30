@@ -38,10 +38,10 @@ suites:
         target_id: '<%= harness_outputs['project_id'] %>'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - project_role
           reporter:
@@ -58,10 +58,10 @@ suites:
         members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - project_role
           reporter:
@@ -78,10 +78,10 @@ suites:
         members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - project_role
           reporter:
@@ -95,10 +95,10 @@ suites:
         target_id: '<%= harness_outputs['org_id'] %>'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - org_role
           reporter:
@@ -115,10 +115,10 @@ suites:
         members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - org_role
           reporter:
@@ -135,10 +135,10 @@ suites:
         members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - org_role
           reporter:
@@ -152,10 +152,10 @@ suites:
         members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - project_role
           reporter:
@@ -168,10 +168,10 @@ suites:
         org_id: '<%= harness_outputs['org_id'] %>'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - org_role
           reporter:
@@ -187,10 +187,10 @@ suites:
         members: '[\"serviceAccount:<%= harness_outputs['sa'] %>\"]'
     verifier:
       systems:
-        - name: f5-dc-role
+        - name: f5-xc-role
           backend: gcp
           profile_locations:
-            - test/profiles/f5-dc-role
+            - test/profiles/f5-xc-role
           controls:
             - project_role
           reporter:

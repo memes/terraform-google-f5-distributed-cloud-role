@@ -41,7 +41,7 @@ members    = [
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_role"></a> [role](#module\_role) | memes/f5-distributed-cloud-role/google | 1.0.1 |
+| <a name="module_role"></a> [role](#module\_role) | memes/f5-distributed-cloud-role/google | 1.0.2 |
 
 ## Resources
 

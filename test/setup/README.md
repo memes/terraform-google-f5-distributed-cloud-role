@@ -30,14 +30,13 @@ org_id  = "123456"
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_sa"></a> [sa](#module\_sa) | terraform-google-modules/service-accounts/google | 4.1.1 |
+No modules.
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [google_service_account.test](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [local_file.harness](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
 | [random_pet.prefix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) | resource |
 

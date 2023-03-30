@@ -20,7 +20,7 @@ output "org_id" {
 }
 
 output "sa" {
-  value       = element(module.sa.emails_list, 0)
+  value       = google_service_account.test.email
   description = <<-EOD
   The generated service account to use for testing.
   EOD

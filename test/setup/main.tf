@@ -24,17 +24,11 @@ resource "random_pet" "prefix" {
   }
 }
 
-module "sa" {
-  source     = "terraform-google-modules/service-accounts/google"
-  version    = "4.1.1"
-  project_id = var.project_id
-  prefix     = random_pet.prefix.id
-  names      = ["test"]
-  descriptions = [
-    "Automated test service account",
-  ]
-  project_roles = []
-  generate_keys = false
+resource "google_service_account" "test" {
+  project      = var.project_id
+  account_id   = format("%s-test", random_pet.prefix.id)
+  display_name = "Kitchen-terraform"
+  description  = "Automated test service account"
 }
 
 resource "local_file" "harness" {
@@ -46,6 +40,6 @@ resource "local_file" "harness" {
   EOC
 
   depends_on = [
-    module.sa,
+    google_service_account.test,
   ]
 }

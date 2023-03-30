@@ -5,6 +5,10 @@ terraform {
       source  = "hashicorp/google"
       version = ">= 3.53, < 5.0"
     }
+    local = {
+      source  = "hashicorp/local"
+      version = ">= 2.4"
+    }
     random = {
       source  = "hashicorp/random"
       version = ">= 3.4"
@@ -31,4 +35,17 @@ module "sa" {
   ]
   project_roles = []
   generate_keys = false
+}
+
+resource "local_file" "harness" {
+  filename             = format("%s/harness.tfvars", path.module)
+  file_permission      = "0640"
+  directory_permission = "0755"
+  content              = <<-EOC
+  # This is a dummy file to indicate that setup is complete
+  EOC
+
+  depends_on = [
+    module.sa,
+  ]
 }

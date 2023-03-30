@@ -25,6 +25,7 @@ org_id  = "123456"
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | >= 3.53, < 5.0 |
+| <a name="requirement_local"></a> [local](#requirement\_local) | >= 2.4 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.4 |
 
 ## Modules
@@ -37,6 +38,7 @@ org_id  = "123456"
 
 | Name | Type |
 |------|------|
+| [local_file.harness](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
 | [random_pet.prefix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) | resource |
 
 ## Inputs

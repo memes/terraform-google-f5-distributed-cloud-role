@@ -16,7 +16,7 @@
 # Default target will create necessary test harness, then launch kitchen test
 .DEFAULT: test
 
-TF_SETUP_SENTINEL := test/setup/terraform.tfstate
+TF_SETUP_SENTINEL := test/setup/harness.tfvars
 
 .PHONY: test
 test: $(TF_SETUP_SENTINEL)

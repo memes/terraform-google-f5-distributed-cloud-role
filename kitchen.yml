@@ -196,3 +196,30 @@ suites:
           reporter:
             - cli
             - documentation:<%= report_dir %>/<%= report_ts %>/example-fixed-id.txt
+  - name: example-cloud-credential
+    driver:
+      root_module_directory: test/fixtures/examples/cloud_credential
+      variables:
+        project_id: '<%= harness_outputs['project_id'] %>'
+        name: '<%= harness_outputs['prefix'] + '-xc' %>'
+        f5_xc_api_url: '<%= ENV['VOLT_API_URL'] %>'
+        f5_xc_api_token: '<%= ENV['VOLTERRA_TOKEN'] %>'
+    verifier:
+      systems:
+        - name: f5-xc-role
+          backend: gcp
+          profile_locations:
+            - test/profiles/f5-xc-role
+          controls:
+            - project_role
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/example-cloud-credential-gcp.txt
+        - name: local
+          backend: local
+          profile_locations:
+            - test/profiles/f5-xc-cloud-credential
+          reporter:
+            - cli
+            - documentation:<%= report_dir %>/<%= report_ts %>/example-cloud-credential-local.txt
+      inputs:

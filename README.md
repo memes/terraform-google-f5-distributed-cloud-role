@@ -53,7 +53,7 @@ module "org_role" {
 ```
 <!-- spell-checker: enable -->
 
-### Create the custom role in the project with a fixed id, and assign to a BIG-IP service account
+### Create the custom role in the project with a fixed id, and assign to a service account
 
 See [Fixed id](examples/fixed_id) example for more details.
 
@@ -70,7 +70,14 @@ module "role" {
 ```
 <!-- spell-checker: enable -->
 
-<!-- spell-checker:ignore markdownlint bigip -->
+### F5 XC Cloud Credential
+
+A deeper example that shows how to create a service account, add the custom role,
+and create a Cloud Credential that can be used for GPC VPC Sites in XC.
+
+See [Cloud Credential](examples/cloud_credential) example for full details.
+
+<!-- spell-checker:ignore markdownlint -->
 <!-- markdownlint-disable MD033 MD034 -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -1,0 +1,16 @@
+---
+name: f5-xc-cloud-credential
+title: F5 Distributed Cloud custom role verification
+maintainer: Matthew Emes <memes@matthewemes.com>
+license: Apache-2.0
+version: 1.0.2
+inputs:
+  - name: output_cloud_credentials
+    type: string
+    required: true
+  - name: input_f5_xc_api_url
+    type: string
+    required: true
+  - name: input_f5_xc_api_token
+    type: string
+    required: true

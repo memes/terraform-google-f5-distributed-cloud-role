@@ -34,7 +34,7 @@ resource "google_service_account_key" "sa" {
 
 module "role" {
   source           = "memes/f5-distributed-cloud-role/google"
-  version          = "1.0.2"
+  version          = "1.0.3"
   target_id        = var.project_id
   random_id_prefix = replace(var.name, "/[^a-z0-9_.]/", "_")
 }

@@ -3,7 +3,7 @@ name: f5-xc-role
 title: F5 Distributed Cloud custom role verification
 maintainer: Matthew Emes <memes@matthewemes.com>
 license: Apache-2.0
-version: 1.0.2
+version: 1.0.3
 supports:
   - platform: gcp
 depends:

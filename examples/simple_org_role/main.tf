@@ -3,6 +3,12 @@
 # Only supported on Terraform 1.0+
 terraform {
   required_version = ">= 1.0"
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 4.58"
+    }
+  }
 }
 
 # Create a custom F5 Distributed Cloud role for an organization

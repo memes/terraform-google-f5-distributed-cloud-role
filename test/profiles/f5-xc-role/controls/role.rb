@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 EXPECTED_PROJECT_PERMISSIONS = [
+  'compute.addresses.create',
+  'compute.addresses.createInternal',
+  'compute.addresses.delete',
+  'compute.addresses.deleteInternal',
+  'compute.addresses.get',
+  'compute.addresses.list',
+  'compute.addresses.use',
+  'compute.addresses.useInternal',
   'compute.backendServices.create',
   'compute.backendServices.delete',
   'compute.backendServices.get',
@@ -19,6 +27,7 @@ EXPECTED_PROJECT_PERMISSIONS = [
   'compute.forwardingRules.delete',
   'compute.forwardingRules.get',
   'compute.forwardingRules.list',
+  'compute.forwardingRules.setLabels',
   'compute.globalOperations.get',
   'compute.healthChecks.create',
   'compute.healthChecks.delete',
@@ -102,6 +111,14 @@ EXPECTED_PROJECT_PERMISSIONS = [
 ].freeze
 
 EXPECTED_ORG_PERMISSIONS = [
+  'compute.addresses.create',
+  'compute.addresses.createInternal',
+  'compute.addresses.delete',
+  'compute.addresses.deleteInternal',
+  'compute.addresses.get',
+  'compute.addresses.list',
+  'compute.addresses.use',
+  'compute.addresses.useInternal',
   'compute.backendServices.create',
   'compute.backendServices.delete',
   'compute.backendServices.get',
@@ -120,6 +137,7 @@ EXPECTED_ORG_PERMISSIONS = [
   'compute.forwardingRules.delete',
   'compute.forwardingRules.get',
   'compute.forwardingRules.list',
+  'compute.forwardingRules.setLabels',
   'compute.globalOperations.get',
   'compute.healthChecks.create',
   'compute.healthChecks.delete',

@@ -25,6 +25,14 @@ locals {
   title       = coalesce(var.title, "Custom F5 Distributed Cloud role")
   description = coalesce(var.description, "Allow F5 Distributed Cloud to fully manage Google Cloud resources")
   permissions = distinct(concat([
+    "compute.addresses.create",
+    "compute.addresses.createInternal",
+    "compute.addresses.delete",
+    "compute.addresses.deleteInternal",
+    "compute.addresses.get",
+    "compute.addresses.list",
+    "compute.addresses.use",
+    "compute.addresses.useInternal",
     "compute.backendServices.create",
     "compute.backendServices.delete",
     "compute.backendServices.get",
@@ -43,6 +51,7 @@ locals {
     "compute.forwardingRules.delete",
     "compute.forwardingRules.get",
     "compute.forwardingRules.list",
+    "compute.forwardingRules.setLabels",
     "compute.globalOperations.get",
     "compute.healthChecks.create",
     "compute.healthChecks.delete",

@@ -34,7 +34,7 @@ resource "google_service_account_key" "sa" {
 
 module "role" {
   source           = "memes/f5-distributed-cloud-role/google"
-  version          = "1.0.3"
+  version          = "1.0.4"
   target_id        = var.project_id
   random_id_prefix = replace(var.name, "/[^a-z0-9_.]/", "_")
 }
@@ -57,7 +57,7 @@ resource "volterra_cloud_credentials" "xc" {
   gcp_cred_file {
     credential_file {
       clear_secret_info {
-        url = format("string:///%s", base64encode(google_service_account_key.sa.private_key))
+        url = format("string:///%s", google_service_account_key.sa.private_key)
       }
     }
   }

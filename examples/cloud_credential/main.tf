@@ -57,7 +57,7 @@ resource "volterra_cloud_credentials" "xc" {
   gcp_cred_file {
     credential_file {
       clear_secret_info {
-        url = format("string:///%s", base64encode(google_service_account_key.sa.private_key))
+        url = format("string:///%s", google_service_account_key.sa.private_key)
       }
     }
   }

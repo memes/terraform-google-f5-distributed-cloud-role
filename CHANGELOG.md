@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.3...v1.0.4) (2023-05-05)
+
+
+### Bug Fixes
+
+* Don't double-b64 encode SA key in example ([5516710](https://github.com/memes/terraform-google-f5-distributed-cloud-role/commit/5516710463465629a2ed46e41547fe6d693c046a)), closes [#30](https://github.com/memes/terraform-google-f5-distributed-cloud-role/issues/30)
+
 ## [1.0.3](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.2...v1.0.3) (2023-04-06)
 
 

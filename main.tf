@@ -42,6 +42,7 @@ locals {
     "compute.disks.get",
     "compute.disks.list",
     "compute.disks.resize",
+    "compute.disks.setLabels",
     "compute.firewalls.create",
     "compute.firewalls.delete",
     "compute.firewalls.get",

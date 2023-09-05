@@ -21,6 +21,27 @@ and [Azure](https://github.com/memes/terraform-azure-f5-distributed-cloud-role).
 > require assistance please join our
 > [Slack GCP channel](https://f5cloudsolutions.slack.com/messages/gcp) and ask!
 
+## Difference with F5 published role
+
+F5 publishes a [YAML](https://gitlab.com/volterra.io/cloud-credential-templates/-/blob/master/gcp/f5xc_gcp_vpc_role.yaml)
+declaration that encapsulates F5 recommended permissions in a fixed role; this
+Terraform module includes *additional permissions* that seem to be needed.
+
+### Added permissions for project-scoped role
+
+* `compute.addresses.createInternal`
+* `compute.addresses.deleteInternal`
+* `compute.addresses.list`
+* `compute.addresses.useInternal`
+
+### Added permissions for organization-scoped role
+
+* `compute.addresses.createInternal`
+* `compute.addresses.deleteInternal`
+* `compute.addresses.list`
+* `compute.addresses.useInternal`
+* `resourcemanager.projects.list`
+
 ## Examples
 
 ### Create the custom role at the project, and assign to an existing service account

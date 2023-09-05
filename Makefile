@@ -95,12 +95,13 @@ realclean: clean
 pre-release.%:
 	@echo '$*' | grep -Eq '^v(?:[0-9]+\.){2}[0-9]+$$' || \
 		(echo "Tag doesn't meet requirements"; exit 1)
-	@test "$(shell git status --porcelain | wc -l | grep -Eo '[0-9]+')" == "0" || \
-		(echo "Git tree is unclean"; exit 1)
+	@awk 'BEGIN{m=0;s=0;v=0}; /module "role"/ {m=1}; m==1 && /source[ \t]*=[ \t]*"memes\/f5-distributed-cloud-role\/google/ {s++}; m==1 && /version[ \t]*=[ \t]*"$(subst .,\.,$(*:v%=%))"/ {v++}; END{if (s==0) { printf "%s has incorrect source\n", FILENAME}; if (v==0) { printf "%s has incorrect version\n", FILENAME}; if (s==0 || v==0) { exit 1}}' README.md
 	@find examples -type f -name main.tf -print0 | \
 		xargs -0 awk 'BEGIN{m=0;s=0;v=0}; /module "role"/ {m=1}; m==1 && /source[ \t]*=[ \t]*"memes\/f5-distributed-cloud-role\/google/ {s++}; m==1 && /version[ \t]*=[ \t]*"$(subst .,\.,$(*:v%=%))"/ {v++}; END{if (s==0) { printf "%s has incorrect source\n", FILENAME}; if (v==0) { printf "%s has incorrect version\n", FILENAME}; if (s==0 || v==0) { exit 1}}'
 	@grep -Eq '^version:[ \t]*$(subst .,\.,$(*:v%=%))[ \t]*$$' test/profiles/f5-xc-role/inspec.yml || \
 		(echo "test/profiles/f5-xc-role/inspec.yml has incorrect tag"; exit 1)
 	@grep -Eq '^version:[ \t]*$(subst .,\.,$(*:v%=%))[ \t]*$$' test/profiles/f5-xc-cloud-credential/inspec.yml || \
 		(echo "test/profiles/f5-xc-cloud-credential/inspec.yml has incorrect tag"; exit 1)
+	@test "$(shell git status --porcelain | wc -l | grep -Eo '[0-9]+')" == "0" || \
+		(echo "Git tree is unclean"; exit 1)
 	@echo 'Source is ready to release $*'

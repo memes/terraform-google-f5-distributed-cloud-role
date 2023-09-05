@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.5](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.4...v1.0.5) (2023-09-05)
+
+
+### Bug Fixes
+
+* Add 'compute.disks.setLabels' to role ([91d0458](https://github.com/memes/terraform-google-f5-distributed-cloud-role/commit/91d045800784e6faa66f84b2db677c47a4c6a09d))
+* Document the differences with F5 YAML ([069cc8b](https://github.com/memes/terraform-google-f5-distributed-cloud-role/commit/069cc8b0107c437391f9c891344463cd542a1422))
+
 ## [1.0.4](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.3...v1.0.4) (2023-05-05)
 
 

@@ -52,7 +52,7 @@ See [Simple project role](examples/simple_project_role) example for more details
 ```hcl
 module "role" {
   source    = "memes/f5-distributed-cloud-role/google"
-  version   = "1.0.5"
+  version   = "1.0.6"
   target_id = "my-project-id"
   members   = ["serviceAccount:f5-xc@my-project-id.iam.gserviceaccount.com"]
 }
@@ -67,7 +67,7 @@ See [Simple org role](examples/simple_org_role) example for more details.
 ```hcl
 module "org_role" {
   source      = "memes/f5-distributed-cloud-role/google"
-  version     = "1.0.5"
+  version     = "1.0.6"
   target_type = "org"
   target_id   = "my-org-id"
 }
@@ -82,7 +82,7 @@ See [Fixed id](examples/fixed_id) example for more details.
 ```hcl
 module "role" {
   source    = "memes/f5-distributed-cloud-role/google"
-  version   = "1.0.5"
+  version   = "1.0.6"
   id        = "my_custom_role"
   target_id = "my-project-id"
   title     = "An example F5 Distributed Cloud custom role"

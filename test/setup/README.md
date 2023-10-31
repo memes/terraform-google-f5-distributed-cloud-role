@@ -24,7 +24,7 @@ org_id  = "123456"
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | >= 3.53, < 5.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 3.53, < 6.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 2.4 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.4 |
 

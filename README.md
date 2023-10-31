@@ -14,8 +14,8 @@ identifier will be generated of the form `f5_xc_xxxx` to avoid unique
 identifier collisions during the time after a custom role is deleted but before
 it is purged from the project or organization.
 
-I have similar modules available for [AWS](https://github.com/memes/terraform-aws-f5-distributed-cloud-role)
-and [Azure](https://github.com/memes/terraform-azure-f5-distributed-cloud-role).
+F5 has similar community supported modules available for [AWS](https://github.com/terraform-xc-cloud-community-modules/terraform-volterra-aws-cloud-credentials)
+and [Azure](https://github.com/terraform-xc-cloud-community-modules/terraform-volterra-azure-cloud-credentials).
 
 > **NOTE:** This module is unsupported and not an official F5 product. If you
 > require assistance please join our

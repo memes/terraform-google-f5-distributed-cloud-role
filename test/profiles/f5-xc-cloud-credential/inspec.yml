@@ -3,7 +3,7 @@ name: f5-xc-cloud-credential
 title: F5 Distributed Cloud - Cloud Credential verification
 maintainer: Matthew Emes <memes@matthewemes.com>
 license: Apache-2.0
-version: 1.0.5
+version: 1.0.6
 inputs:
   - name: output_cloud_credentials
     type: string

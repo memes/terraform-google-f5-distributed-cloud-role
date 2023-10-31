@@ -113,7 +113,7 @@ See [Cloud Credential](examples/cloud_credential) example for full details.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_role"></a> [role](#module\_role) | terraform-google-modules/iam/google//modules/custom_role_iam | 7.6.0 |
+| <a name="module_role"></a> [role](#module\_role) | terraform-google-modules/iam/google//modules/custom_role_iam | 7.7.1 |
 
 ## Resources
 

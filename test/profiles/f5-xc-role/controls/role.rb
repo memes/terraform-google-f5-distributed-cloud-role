@@ -75,6 +75,8 @@ EXPECTED_PROJECT_PERMISSIONS = [
   'compute.instances.updateAccessConfig',
   'compute.instances.updateNetworkInterface',
   'compute.instances.use',
+  'compute.interconnectAttachments.get',
+  'compute.machineTypes.get',
   'compute.machineTypes.list',
   'compute.networkEndpointGroups.attachNetworkEndpoints',
   'compute.networks.access',
@@ -86,12 +88,15 @@ EXPECTED_PROJECT_PERMISSIONS = [
   'compute.networks.updatePolicy',
   'compute.networks.use',
   'compute.networks.useExternalIp',
+  'compute.projects.get',
   'compute.regionBackendServices.create',
   'compute.regionBackendServices.delete',
   'compute.regionBackendServices.get',
   'compute.regionBackendServices.list',
   'compute.regionBackendServices.use',
   'compute.regionOperations.get',
+  'compute.regions.get',
+  'compute.routers.get',
   'compute.routes.create',
   'compute.routes.delete',
   'compute.routes.get',
@@ -109,7 +114,7 @@ EXPECTED_PROJECT_PERMISSIONS = [
   'iam.serviceAccounts.get',
   'iam.serviceAccounts.list',
   'resourcemanager.projects.get'
-].freeze
+].sort!.freeze
 
 EXPECTED_ORG_PERMISSIONS = [
   'compute.addresses.create',
@@ -186,6 +191,8 @@ EXPECTED_ORG_PERMISSIONS = [
   'compute.instances.updateAccessConfig',
   'compute.instances.updateNetworkInterface',
   'compute.instances.use',
+  'compute.interconnectAttachments.get',
+  'compute.machineTypes.get',
   'compute.machineTypes.list',
   'compute.networkEndpointGroups.attachNetworkEndpoints',
   'compute.networks.access',
@@ -197,12 +204,15 @@ EXPECTED_ORG_PERMISSIONS = [
   'compute.networks.updatePolicy',
   'compute.networks.use',
   'compute.networks.useExternalIp',
+  'compute.projects.get',
   'compute.regionBackendServices.create',
   'compute.regionBackendServices.delete',
   'compute.regionBackendServices.get',
   'compute.regionBackendServices.list',
   'compute.regionBackendServices.use',
   'compute.regionOperations.get',
+  'compute.regions.get',
+  'compute.routers.get',
   'compute.routes.create',
   'compute.routes.delete',
   'compute.routes.get',
@@ -221,7 +231,7 @@ EXPECTED_ORG_PERMISSIONS = [
   'iam.serviceAccounts.list',
   'resourcemanager.projects.get',
   'resourcemanager.projects.list'
-].freeze
+].sort!.freeze
 
 control 'project_role' do
   title 'Verify F5 Distributed Cloud custom role with project scope'

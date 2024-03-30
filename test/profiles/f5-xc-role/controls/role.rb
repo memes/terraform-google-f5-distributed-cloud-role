@@ -113,7 +113,9 @@ EXPECTED_PROJECT_PERMISSIONS = [
   'iam.serviceAccounts.actAs',
   'iam.serviceAccounts.get',
   'iam.serviceAccounts.list',
-  'resourcemanager.projects.get'
+  'resourcemanager.projects.get',
+  # @memes added 3/29/24
+  'compute.projects.get'
 ].sort!.freeze
 
 EXPECTED_ORG_PERMISSIONS = [
@@ -230,7 +232,9 @@ EXPECTED_ORG_PERMISSIONS = [
   'iam.serviceAccounts.get',
   'iam.serviceAccounts.list',
   'resourcemanager.projects.get',
-  'resourcemanager.projects.list'
+  'resourcemanager.projects.list',
+  # @memes added 3/29/24
+  'compute.projects.get'
 ].sort!.freeze
 
 control 'project_role' do

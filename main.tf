@@ -138,8 +138,6 @@ locals {
     "iam.serviceAccounts.get",
     "iam.serviceAccounts.list",
     "resourcemanager.projects.get",
-    # @memes added 3/29/24
-    "compute.projects.get",
     ],
     var.target_type == "org" ? [
       "resourcemanager.projects.list",

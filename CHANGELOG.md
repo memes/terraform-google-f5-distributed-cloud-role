@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.8](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.7...v1.0.8) (2024-06-07)
+
+
+### Bug Fixes
+
+* Add blindfold example and supporting test ([79a20d4](https://github.com/memes/terraform-google-f5-distributed-cloud-role/commit/79a20d42ae48eac4d3e93546c5747780d179e244))
+
 ## [1.0.7](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.6...v1.0.7) (2024-03-28)
 
 

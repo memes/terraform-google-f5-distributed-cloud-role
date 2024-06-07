@@ -93,10 +93,11 @@ module "role" {
 
 ### F5 XC Cloud Credential
 
-A deeper example that shows how to create a service account, add the custom role,
+Deeper examples that show how to create a service account, add the custom role,
 and create a Cloud Credential that can be used for GPC VPC Sites in XC.
 
-See [Cloud Credential](examples/cloud_credential) example for full details.
+See [Blindfold Cloud Credential](examples/blindfold_cloud_credential) and
+[Plaintext Cloud Credential](examples/cloud_credential) examples for full details.
 
 <!-- spell-checker:ignore markdownlint -->
 <!-- markdownlint-disable MD033 MD034 -->

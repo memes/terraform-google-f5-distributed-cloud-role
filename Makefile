@@ -50,7 +50,7 @@ converge: $(TF_SETUP_SENTINEL)
 converge.%: $(TF_SETUP_SENTINEL)
 	kitchen converge $*
 
-EXAMPLES := simple_project_role simple_org_role fixed_id cloud_credential
+EXAMPLES := simple_project_role simple_org_role fixed_id cloud_credential blindfold_cloud_credential
 
 $(TF_SETUP_SENTINEL): $(wildcard test/setup/*.tf) $(filter-out $(TF_SETUP_SENTINEL), $(wildcard test/setup/*.tfvars)) $(addprefix test/ephemeral/,$(addsuffix /main.tf,$(EXAMPLES)))
 	terraform -chdir=$(@D) init -input=false

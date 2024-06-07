@@ -9,4 +9,9 @@ fileignoreconfig:
 - filename: examples/cloud_credential/main.tf
   checksum: ce22ad3a72c39d3cc7aa37e1fd7a568859826be625d4aa6c253ec308c7f5f7e4
 - filename: examples/cloud_credential/README.md
-  checksum: 6089cfa3634b583cd119a92c3a0e54a02541489eb35007546652cd16ea42c54f
+  checksum: 6f6dcf5cbc18a21bc51e2832a24b4dec9e6b41ce55dff5f5937076f631044f9d
+- filename: examples/blindfold_cloud_credential/main.tf
+  checksum: 990ae3c7f7d585e87936bc7b4014fdd524a75517ba41822bdda523099216da2c
+- filename: examples/blindfold_cloud_credential/README.md
+  checksum: b2344a6480a1fddc01825e47512b2b862f2acef1240b59815c79dae0a2a42958
+version: "1.0"

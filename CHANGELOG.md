@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.9](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.8...v1.0.9) (2024-10-29)
+
+
+### Bug Fixes
+
+* Require terraform/opentofu v1.3+ ([a408779](https://github.com/memes/terraform-google-f5-distributed-cloud-role/commit/a408779e62cfd49c5a57ae48924ef4d2c9a951f4))
+
 ## [1.0.8](https://github.com/memes/terraform-google-f5-distributed-cloud-role/compare/v1.0.7...v1.0.8) (2024-06-07)
 
 

@@ -1,9 +1,9 @@
 # Example Terraform to create an F5 XC Cloud Credential for GCP VPC Sites, with
 # a service account assigned to the custom F5 XC role at the project level.
 
-# Only supported on Terraform 1.0+
+# Only supported on Terraform 1.3+
 terraform {
-  required_version = ">= 1.0"
+  required_version = ">= 1.3"
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -34,7 +34,7 @@ resource "google_service_account_key" "sa" {
 
 module "role" {
   source           = "memes/f5-distributed-cloud-role/google"
-  version          = "1.0.8"
+  version          = "1.0.9"
   target_id        = var.project_id
   random_id_prefix = replace(var.name, "/[^a-z0-9_.]/", "_")
 }

@@ -52,7 +52,7 @@ See [Simple project role](examples/simple_project_role) example for more details
 ```hcl
 module "role" {
   source    = "memes/f5-distributed-cloud-role/google"
-  version   = "1.0.8"
+  version   = "1.0.9"
   target_id = "my-project-id"
   members   = ["serviceAccount:f5-xc@my-project-id.iam.gserviceaccount.com"]
 }
@@ -67,7 +67,7 @@ See [Simple org role](examples/simple_org_role) example for more details.
 ```hcl
 module "org_role" {
   source      = "memes/f5-distributed-cloud-role/google"
-  version     = "1.0.8"
+  version     = "1.0.9"
   target_type = "org"
   target_id   = "my-org-id"
 }
@@ -82,7 +82,7 @@ See [Fixed id](examples/fixed_id) example for more details.
 ```hcl
 module "role" {
   source    = "memes/f5-distributed-cloud-role/google"
-  version   = "1.0.8"
+  version   = "1.0.9"
   id        = "my_custom_role"
   target_id = "my-project-id"
   title     = "An example F5 Distributed Cloud custom role"
@@ -101,12 +101,12 @@ See [Blindfold Cloud Credential](examples/blindfold_cloud_credential) and
 
 <!-- spell-checker:ignore markdownlint -->
 <!-- markdownlint-disable MD033 MD034 -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | >= 4.38, < 7.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.4 |
 
@@ -126,18 +126,18 @@ See [Blindfold Cloud Credential](examples/blindfold_cloud_credential) and
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_target_id"></a> [target\_id](#input\_target\_id) | Sets the target for role creation; must be either an organization ID (target\_type = 'org'),<br>or project ID (target\_type = 'project'). | `string` | n/a | yes |
-| <a name="input_description"></a> [description](#input\_description) | The optional description to assign to the custom IAM role. If left blank (default),<br>a suitable description will be created. | `string` | `null` | no |
-| <a name="input_id"></a> [id](#input\_id) | An identifier to use for the new role; default is an empty string which will<br>generate a unique identifier. If a value is provided, it must be unique at the<br>organization or project level depending on value of target\_type respectively.<br>E.g. multiple projects can all have a 'f5\_xc' role defined, but an organization<br>level role must be uniquely named. | `string` | `null` | no |
-| <a name="input_members"></a> [members](#input\_members) | An optional list of accounts that will be assigned the custom role. Default is<br>an empty list. | `list(string)` | `[]` | no |
-| <a name="input_random_id_prefix"></a> [random\_id\_prefix](#input\_random\_id\_prefix) | The prefix to use when generating random role identifier for the new role if<br>`id` field is blank. The default is 'f5\_xc' which will generate a unique role<br>identifier of the form 'f5\_xc\_XXXX', where XXXX is a random hex string. | `string` | `"f5_xc"` | no |
-| <a name="input_target_type"></a> [target\_type](#input\_target\_type) | Determines if the F5 Distributed Cloud role is to be created for the whole<br>organization ('org') or at a 'project' level. Default is 'project'. | `string` | `"project"` | no |
-| <a name="input_title"></a> [title](#input\_title) | The human-readable title to assign to the custom IAM role. If left blank (default),<br>a suitable title will be created. | `string` | `null` | no |
+| <a name="input_target_id"></a> [target\_id](#input\_target\_id) | Sets the target for role creation; must be either an organization ID (target\_type = 'org'),<br/>or project ID (target\_type = 'project'). | `string` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | The optional description to assign to the custom IAM role. If left blank (default),<br/>a suitable description will be created. | `string` | `null` | no |
+| <a name="input_id"></a> [id](#input\_id) | An identifier to use for the new role; default is an empty string which will<br/>generate a unique identifier. If a value is provided, it must be unique at the<br/>organization or project level depending on value of target\_type respectively.<br/>E.g. multiple projects can all have a 'f5\_xc' role defined, but an organization<br/>level role must be uniquely named. | `string` | `null` | no |
+| <a name="input_members"></a> [members](#input\_members) | An optional list of accounts that will be assigned the custom role. Default is<br/>an empty list. | `list(string)` | `[]` | no |
+| <a name="input_random_id_prefix"></a> [random\_id\_prefix](#input\_random\_id\_prefix) | The prefix to use when generating random role identifier for the new role if<br/>`id` field is blank. The default is 'f5\_xc' which will generate a unique role<br/>identifier of the form 'f5\_xc\_XXXX', where XXXX is a random hex string. | `string` | `"f5_xc"` | no |
+| <a name="input_target_type"></a> [target\_type](#input\_target\_type) | Determines if the F5 Distributed Cloud role is to be created for the whole<br/>organization ('org') or at a 'project' level. Default is 'project'. | `string` | `"project"` | no |
+| <a name="input_title"></a> [title](#input\_title) | The human-readable title to assign to the custom IAM role. If left blank (default),<br/>a suitable title will be created. | `string` | `null` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_qualified_role_id"></a> [qualified\_role\_id](#output\_qualified\_role\_id) | The qualified role-id for the custom CFE role. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
 <!-- markdownlint-enable MD033 MD034 -->

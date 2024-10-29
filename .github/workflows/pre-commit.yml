@@ -1,7 +1,8 @@
-# These github actions will perform linting using pre-commit.
-# yamllint disable rule:line-length
-# spell-checker: disable
+# These github actions will update Terraform section(s) of README(s), and
+# perform linting using pre-commit.
 ---
+# yamllint disable rule:line-length
+# spell-checker: ignore yamllint chmod
 name: pre-commit
 
 # yamllint disable-line rule:truthy
@@ -21,22 +22,19 @@ jobs:
       BUNDLE_WITH: dev
     steps:
       - uses: actions/checkout@v4
-      - name: install talisman
+      - name: Install talisman
         run: |
           sudo curl -sLo /usr/local/bin/talisman https://github.com/thoughtworks/talisman/releases/download/v1.32.0/talisman_linux_amd64
           sudo chmod 0755 /usr/local/bin/talisman
       - name: Install terraform-docs
         run: |
-          sudo sh -c 'curl -sL https://github.com/terraform-docs/terraform-docs/releases/download/v0.17.0/terraform-docs-v0.17.0-linux-amd64.tar.gz | tar xzf - -C /usr/local/bin'
+          sudo sh -c 'curl -sL https://github.com/terraform-docs/terraform-docs/releases/download/v0.19.0/terraform-docs-v0.19.0-linux-amd64.tar.gz | tar xzf - -C /usr/local/bin'
           sudo chmod 0755 /usr/local/bin/terraform-docs
-      - name: Install ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3.0'
-          bundler-cache: true
-      - name: Install python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Pre-commit
-        uses: pre-commit/action@v3.0.1
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.5
+          bundler-cache: true
+      - uses: pre-commit/action@v3.0.1

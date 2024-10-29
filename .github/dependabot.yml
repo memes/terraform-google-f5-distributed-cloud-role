@@ -8,13 +8,13 @@ updates:
     reviewers:
       - memes
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directory: /
     schedule:
       interval: "weekly"
     reviewers:
       - memes
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: /
     schedule:
       interval: "weekly"
     reviewers:

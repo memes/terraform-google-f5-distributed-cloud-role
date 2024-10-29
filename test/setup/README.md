@@ -18,12 +18,12 @@ org_id  = "123456"
 ```
 
 <!-- markdownlint-disable MD033 MD034 -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | >= 3.53, < 6.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 2.4 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.4 |
@@ -55,5 +55,5 @@ No modules.
 | <a name="output_prefix"></a> [prefix](#output\_prefix) | The random prefix to use for all resources in this test run. |
 | <a name="output_project_id"></a> [project\_id](#output\_project\_id) | The Google Cloud project identifier to use for resources. |
 | <a name="output_sa"></a> [sa](#output\_sa) | The generated service account to use for testing. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
 <!-- markdownlint-enable MD033 MD034 -->

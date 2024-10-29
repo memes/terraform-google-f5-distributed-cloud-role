@@ -9,7 +9,7 @@ supports:
 depends:
   - name: inspec-gcp
     git: https://github.com/inspec/inspec-gcp.git
-    tag: v1.11.98
+    tag: v1.11.135
 inputs:
   - name: output_role_id
     type: string

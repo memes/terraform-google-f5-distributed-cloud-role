@@ -11,14 +11,14 @@ repos:
         exclude: (kitchen\.yml|\.github/ISSUE_TEMPLATE/config\.yml)$
         entry: yamllint --strict
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.96.1
+    rev: v1.97.4
     hooks:
       - id: terraform_fmt
       - id: terraform_docs
         args:
           - '--args=--sort-by=required --hide=providers'
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v3.6.0
+    rev: v4.0.0
     hooks:
       - id: conventional-pre-commit
         stages:

@@ -149,7 +149,7 @@ locals {
 # granted this role.
 module "role" {
   source       = "terraform-google-modules/iam/google//modules/custom_role_iam"
-  version      = "8.0.0"
+  version      = "8.1.0"
   target_level = var.target_type
   target_id    = var.target_id
   role_id      = coalesce(var.id, format("%s_%s", var.random_id_prefix, random_id.role_id.hex))

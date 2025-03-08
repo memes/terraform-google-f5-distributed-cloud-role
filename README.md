@@ -114,7 +114,7 @@ See [Blindfold Cloud Credential](examples/blindfold_cloud_credential) and
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_role"></a> [role](#module\_role) | terraform-google-modules/iam/google//modules/custom_role_iam | 8.0.0 |
+| <a name="module_role"></a> [role](#module\_role) | terraform-google-modules/iam/google//modules/custom_role_iam | 8.1.0 |
 
 ## Resources
 

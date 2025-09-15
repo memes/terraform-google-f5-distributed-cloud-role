@@ -4,6 +4,10 @@
 ![Maintenance](https://img.shields.io/maintenance/yes/2024)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
+> NOTE: As of F5 Distributed Cloud SMS v2 availability, use of this module to create a custom role is deprecated.
+> Instead, you should create Customer Edge nodes directly and register those with the console. See
+> https://github.com/memes/terraform-google-volterra for examples..
+> 
 This Terraform module is a helper to create a custom IAM role that has the
 permissions required for F5 Distributed Cloud to manage a Google Cloud environment.
 The role will be created in the specified project by default, but can be created
